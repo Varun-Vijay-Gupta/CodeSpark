@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CodeSpark</title>
+    <link rel="stylesheet" href="alert.css">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,500&display=swap');
+        body {
+    font-family: "poppins",sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(backgroun3.jpg);
+    color: white;
+}
+
+header {
+    text-align: center;
+    font-family: "poppins",sans-serif;
+
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    font-family: "poppins",sans-serif;
+
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    font-family: "poppins",sans-serif;
+
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    font-family: "poppins",sans-serif;
+
+    text-decoration: none;
+    color: #ff4b5c;
+    font-size: 18px;
+}
+.contact-content, .help-content {
+    padding: 40px;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+form input, form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+form button {
+    background: #ff4b5c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+details {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.about-content {
+    font-family: "poppins",sans-serif;
+
+    padding: 40px;
+    text-align: center;
+}
+
+
+.about-content h2 {
+    font-family: "poppins",sans-serif;
+
+    color: #ff4b5c;
+}
+
+.about-content ul {
+    font-family: "poppins",sans-serif;
+
+    list-style: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    font-family: "poppins",sans-serif;
+
+    background: #ff4b5c;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+footer {
+    font-family: "poppins",sans-serif;
+
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.2);
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="help.html">Help</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-content">
+        <h2>Get in Touch</h2>
+        <p>If you have any questions, feel free to reach out!</p>
+
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your Name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Your Email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 CodeSpark. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const contactForm = document.getElementById("contact-form");
+    
+            contactForm.addEventListener("submit", async function (e) {
+                e.preventDefault();
+    
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const message = document.getElementById("message").value.trim();
+    
+                if (!name || !email || !message) {
+                    showCustomAlert("Please fill in all fields.", "error");
+                    return;
+                }
+    
+                try {
+                    const response = await fetch("http://localhost:5000/send-email", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ name, email, message })
+                    });
+    
+                    const data = await response.json();
+    
+                    if (response.ok) {
+                        showCustomAlert(data.message, "success");
+                        contactForm.reset();
+                    } else {
+                        showCustomAlert(data.message || "Error sending message.", "error");
+                    }
+                } catch (error) {
+                    showCustomAlert("Error sending message. Please try again later.", "error");
+                    console.error("Error:", error);
+                }
+            });
+    
+            function showCustomAlert(message, type) {
+                const alertBox = document.createElement("div");
+                alertBox.textContent = message;
+                alertBox.style.position = "fixed";
+                alertBox.style.bottom = "30px";
+                alertBox.style.left = "50%";
+                alertBox.style.transform = "translateX(-50%)";
+                alertBox.style.padding = "15px 30px";
+                alertBox.style.backgroundColor = type === "success" ? "#28a745" : "#dc3545";
+                alertBox.style.color = "white";
+                alertBox.style.borderRadius = "8px";
+                alertBox.style.boxShadow = "0 4px 8px rgba(0,0,0,0.2)";
+                alertBox.style.fontFamily = "Poppins, sans-serif";
+                alertBox.style.fontWeight = "500";
+                alertBox.style.fontSize = "16px";
+                alertBox.style.zIndex = "9999";
+                alertBox.style.display = "flex";
+                alertBox.style.alignItems = "center";
+                alertBox.style.gap = "10px";
+    
+                // Add a checkmark for success or cross for error
+                const icon = document.createElement("span");
+                icon.innerHTML = type === "success" ? "&#10003;" : "&#10060;";
+                icon.style.fontSize = "20px";
+                alertBox.prepend(icon);
+    
+                document.body.appendChild(alertBox);
+    
+                setTimeout(() => {
+                    alertBox.remove();
+                }, 3000);
+            }
+        });
+    </script>
+    
+    
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Learning</title>
+    <link rel="stylesheet" href="beginner.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Beginner Level Code</h1>
+        <button id="back-btn" onclick="goBacktoDashboard()">Back to Dashboard</button>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search-box" placeholder="Search for a topic..." onkeyup="searchTopic()">
+                <button onclick="searchTopic()">Search</button>
+            </div>
+        </div>
+
+        <!-- Explanation Section -->
+        <div id="explanation-section" class="hidden">
+            <h2 id="topic-title"></h2>
+            <p id="topic-explanation"></p>
+            <center><button id="next-code-btn" onclick="showPartialCode()">Next</button></center>
+        </div>
+
+        <!-- Partial Code Section -->
+        <div id="code-section" class="hidden">
+            <h2>Write the Missing Code</h2>
+            <pre id="partial-code"></pre>
+            <textarea id="user-code" placeholder="Write missing code here..."></textarea>
+            <button onclick="checkCode()">Submit Code</button>
+            <p id="code-feedback"></p>
+        </div>
+
+        <!-- Quiz Section -->
+        <div id="quiz-section" class="hidden">
+            <h2>Quiz Time</h2>
+            <p id="quiz-question"></p>
+            <ul id="quiz-options"></ul>
+            <button onclick="nextQuiz()">Next Question</button>
+            <p id="quiz-result"></p>
+        </div>
+
+        <!-- Progress & Next Topic Buttons -->
+        <div class="button-group">
+            <button id="save-progress-btn" class="hidden" onclick="saveProgress()">Save Progress</button>
+            <button id="progress-report-btn" class="hidden" onclick="loadProgress()">View Progress Report</button>
+            <button id="next-topic-btn" class="hidden" onclick="goBack()">Search Next Topic</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 CodeSpark. All rights reserved.</p>
+    </footer>
+    <!-- Alert Box -->
+    <div id="alert-box" class="alert-box"></div>
+
+    <script src="beginner.js"></script>
+</body>
+</html>

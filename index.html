@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodeSpark</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="alert.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <header class="header">
+        <nav class="navbar">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="help.html">Help</a>
+        </nav>
+   </header>
+
+    <div class="background"></div>
+
+    <div class="container">
+        <div class="item">
+            <h2 class="logo"><i class='bx bxl-xing'></i>CodeSpark</h2>
+            <div class="text-item">
+                <h2>Welcome! <br><span></span></h2>
+                <p>Enhance your coding skills with interactive challenges.</p>
+                <div class="social-icon">
+                    <a href="https://www.facebook.com/"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://x.com/"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.youtube.com/"><i class='bx bxl-youtube'></i></a>
+                    <a href="https://www.instagram.com"><i class='bx bxl-instagram'></i></a>
+                    <a href="https://in.linkedin.com/"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-section">
+            <!-- Login Form -->
+            <div class="form-box login">
+                <form id="loginForm">
+                    <h2>Sign In</h2>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input type="email" id="email" required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="input-box" style="position: relative;">
+                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                        <input type="password" id="password" required>
+                        <label>Password</label>
+                        <span id="toggleLoginPassword" style="position: absolute; right: 40px; top: 50%; transform: translateY(-50%); cursor: pointer;">👁️</span>
+                    </div>
+
+                    <div class="remember-password">
+                        <label><input type="checkbox"> Remember Me</label>
+                        <a href="forgot-password.html" id="forgotPassword">Forget Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn">Login</button>
+                    <p id="loginError" class="error-message"></p>
+
+                    <div class="create-account">
+                        <p>Create A New Account? <a href="#" class="register-link">Sign Up</a></p>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sign-Up Form -->
+            <div class="form-box register">
+                <form id="signupForm">
+                    <h2>Sign Up</h2>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-user'></i></span>
+                        <input type="text" id="signupUsername" required>
+                        <label>Username</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-envelope'></i></span>
+                        <input type="email" id="signupEmail" required>
+                        <label>Email</label>
+                    </div>
+
+                    <div class="input-box" style="position: relative;">
+                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
+                        <input type="password" id="signupPassword" required>
+                        <label>Password</label>
+                        <span id="togglePassword" style="position: absolute; right: 40px; top: 50%; transform: translateY(-50%); cursor: pointer;">👁️</span>
+                    </div>
+
+                    <div style="margin: 10px 0;">
+                        <progress id="strength-bar" max="4" value="0" style="width: 100%; height: 6px; border-radius: 3px;"></progress>
+                        <p id="strength-text" style="margin: 5px 0 10px; font-weight: 500;"></p>
+                    </div>
+
+                    <!-- ✅ OTP input will be dynamically inserted here -->
+                    <div class="input-box">
+                        <span class="icon"><i class='bx bxs-shield'></i></span>
+                        <input type="text" id="signupOTP" required>
+                        <label>OTP</label>
+                    </div>
+                    
+
+                    <div class="remember-password">
+                        <label><input type="checkbox" required> I agree to the terms</label>
+                    </div>
+
+                    <button type="submit" class="btn">Sign Up</button>
+                    <p id="signupError" class="error-message"></p>
+
+                    <div class="create-account">
+                        <p>Already Have An Account? <a href="#" class="login-link">Sign In</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+
+    <!-- 🔗 Scripts -->
+    <script src="index.js" defer></script>
+    <script src="alert.js" defer></script>
+</body>
+</html>

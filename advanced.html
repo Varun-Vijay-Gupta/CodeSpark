@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Learning</title>
+    <link rel="stylesheet" href="advanced.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Advanced Level Code</h1>
+        <button id="back-btn" onclick="goBacktoDashboard()">Back to Dashboard</button>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search-box" placeholder="Search for a topic..." onkeyup="searchTopic()">
+                <button onclick="searchTopic()">Search</button>
+            </div>
+        </div>
+
+        <!-- Explanation Section -->
+        <div id="explanation-section" class="hidden">
+            <h2 id="topic-title"></h2>
+            <p id="topic-explanation"></p>
+            <center>
+                <button id="next-btn" onclick="showExternalResources()">Next</button>
+            </center>
+        </div>
+
+        <!-- External Resource Section -->
+<div id="external-resources-section" class="hidden">
+    <h2>External Resources</h2>
+    <ul id="external-links-list"></ul>
+
+    <!-- Add Progress Buttons -->
+    <div class="button-group">
+        <button onclick="saveProgress()">Save Progress</button>
+        <button onclick="loadProgress()">View Progress Report </button>
+        <button onclick="goBack()">Search Next Topic</button>
+    </div>
+</div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CodeSpark. All rights reserved.</p>
+    </footer>
+
+    <!-- Alert Box -->
+    <div id="alert-box" class="alert-box"></div>
+
+    <script src="advanced.js"></script>
+</body>
+</html>

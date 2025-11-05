@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-emphasis-color: white;
+}
+
+body {
+    background: linear-gradient(180deg, #0b0138, #12014d, #170b5d);
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+    
+}
+
+/* Header */
+header {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+}
+
+.highlight {
+    color: #ff4b2b;
+}
+
+/* Logout Button */
+.logout-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+.team-btn {
+    position: absolute;
+    top: 20px;
+    right: 140px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.team-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+}
+
+.logout-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+}
+
+/* Sections */
+section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+    
+}
+
+section:hover {
+    transform: scale(1.02);
+}
+
+/* Feature Cards */
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.feature-card {
+    width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+}
+.feature-card.expanded {
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.2);
+}
+
+.details {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Level Cards */
+.levels {
+    margin-top: 30px;
+}
+
+.level-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.level-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Level Buttons */
+.level-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    text-decoration: none;
+}
+
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .features {
+        flex-direction: column;
+    }
+
+    .feature-card {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

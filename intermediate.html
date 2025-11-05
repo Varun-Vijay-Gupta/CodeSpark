@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermediate Learning</title>
+    <link rel="stylesheet" href="intermediate.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Intermediate Level Code</h1>
+        <button id="back-btn" onclick="goBacktoDashboard()">Back to Dashboard</button>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="search-box" placeholder="Search for a topic..." onkeyup="searchTopic()">
+                <button onclick="searchTopic()">Search</button>
+            </div>
+        </div>
+
+        <!-- Explanation Section -->
+        <div id="explanation-section" class="hidden">
+            <h2 id="topic-title"></h2>
+            <p id="topic-explanation"></p>
+            <center><button id="next-code-btn" onclick="showPartialCode()">Next</button></center>
+        </div>
+
+<!-- Partial Code Section -->
+<div id="code-section" class="hidden">
+    <h2 id="code-prompt">Write the Missing Code</h2>
+    <pre id="partial-code"></pre>
+    <textarea id="user-code" placeholder="Write missing code here..."></textarea>
+    <button onclick="checkCode()">Submit Code</button>
+    <p id="code-feedback"></p>
+</div>
+
+
+
+       <!-- Questions Section -->
+<div id="questions-section" class="hidden">
+    <h2>Related Questions</h2>
+    <ul id="related-questions"></ul>
+
+    <h2>Coding Questions</h2>
+    <ul id="coding-questions"></ul>
+
+    <button onclick="saveProgress()">Save Progress</button>
+        <button onclick="loadProgress()">View Progress Report </button>
+        <button onclick="goBack()">Search Next Topic</button>
+</div>
+
+
+        <!-- Progress & Next Topic Buttons -->
+        <div class="button-group">
+            <button id="save-progress-btn" class="hidden" onclick="saveProgress()">Save Progress</button>
+            <button id="progress-report-btn" class="hidden" onclick="loadProgress()">View Progress Report</button>
+            <button id="next-topic-btn" class="hidden" onclick="goBack()">Search Next Topic</button>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 CodeSpark. All rights reserved.</p>
+    </footer>
+    <!-- Alert Box -->
+    <div id="alert-box" class="alert-box"></div>
+
+    <script src="intermediate.js"></script>
+</body>
+</html>

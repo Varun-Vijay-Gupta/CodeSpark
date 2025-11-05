@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0f172a;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #16213e;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    background-color: #1e293b;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 0 12px rgba(255, 105, 180, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-box:hover {
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    color: white;
+    padding: 10px;
+    width: 300px;
+    outline: none;
+    font-size: 16px;
+}
+
+.search-box button {
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: -2px; /* Moves button up */
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.search-box button:hover {
+    background-color: #d63447;
+}
+
+/* Explanation Section */
+#explanation-section {
+    padding: 20px;
+    background-color: #1e293b;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+
+#topic-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Code Section */
+#code-section {
+    background-color: #1e293b;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0f172a;
+    color: white;
+    border: 1px solid #e94560;
+}
+
+/* Quiz Section */
+#quiz-section {
+    background-color: #1e293b;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+    text-align: left;
+}
+#back-btn {
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    
+}
+
+#back-btn:hover{
+    background-color: #d63447;
+    transform: translateY(-2px);
+}
+
+
+/* Buttons */
+button {
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #d63447;
+    transform: translateY(-2px);
+}
+
+/* Alert Box */
+.alert-box {
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e94560;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    transition: bottom 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.alert-box.show {
+    bottom: 20px;
+    opacity: 1;
+}
+
+.hidden {
+    
+    display: none;
+}
+
+.animated-button {
+    background-color: #e94560;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.animated-button:hover {
+    background-color: #d63447;
+    transform: translateY(-2px);
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-in-out forwards;
+    opacity: 0;
+    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

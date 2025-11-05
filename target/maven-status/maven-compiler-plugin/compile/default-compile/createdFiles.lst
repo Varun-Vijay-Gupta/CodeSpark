@@ -1,0 +1,7 @@
+com\example\demo\controller\HelloController.class
+com\myproject\controller\UserController.class
+com\myproject\MajorMinorApplication.class
+com\myproject\service\UserService.class
+com\myproject\repository\UserRepository.class
+com\myproject\model\User.class
+com\myproject\MongoDBConnection.class

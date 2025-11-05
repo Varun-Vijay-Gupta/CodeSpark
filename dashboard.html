@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSpark Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <button class="logout-btn" onclick="logout()">Log Out</button>
+        <button class="team-btn" onclick="showTeam()">Our Team</button>
+        <header>
+            <h1>Welcome to <span class="highlight">CodeSpark!</span></h1>
+            <p>Your Ultimate Hub for Interactive Coding Challenges and Learning.</p>
+        </header>
+
+        <section class="dashboard">
+            <h2>🌟 About CodeSpark</h2>
+            <p>CodeSpark is a platform designed to help aspiring developers sharpen their skills through hands-on coding exercises, real-world challenges, and community-driven learning. Whether you are a beginner, intermediate, or advanced coder, we have something for everyone!</p>
+            
+            <div class="features">
+                <div class="feature-card" id="interactiveCourses" onclick="toggleExpand(this)">
+                    <p><b>📚 Interactive Courses</b></p>
+                    <p class="details hidden">
+                        Our interactive courses offer hands-on coding challenges with real-time feedback. 
+                        Learn at your own pace with guided lessons, quizzes, and projects.
+                    </p>
+                </div>
+                <div class="feature-card" id="codingChallenges" onclick="toggleExpand(this)">
+                    <p><b>🎯 Different Levels of Challenges</b></p>
+                    <p class="details hidden">
+                        Choose from beginner, intermediate, and advanced challenges to test and improve your coding skills.
+                    </p>
+                </div>
+                <div class="feature-card" id="communityForum" onclick="toggleExpand(this)">
+                    <p><b>💬 Community Forum</b></p>
+                    <p class="details hidden">
+                        Join our vibrant community, discuss coding problems, share knowledge, and collaborate on projects.
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+        <section id="aboutUs">
+            <h2>🔍 About Us</h2>
+            <p>Welcome to CodeSpark! We are dedicated to helping developers learn coding through interactive challenges, hands-on exercises, and a supportive community. Whether you're a beginner or an expert, we provide resources to level up your skills. Join us and start coding today!</p>
+        </section>
+        
+
+        <section class="levels">
+            <h2>🚀 Choose Your Coding Level</h2>
+            <div class="level-card">
+                <h3>🟢 Beginner</h3>
+                <p>Start from scratch and build a strong foundation in coding.</p>
+                <a href="beginner.html" class="level-btn">Start Learning</a>
+            </div>
+            <div class="level-card">
+                <h3>🟡 Intermediate</h3>
+                <p>Enhance your skills with projects, algorithms, and real-world scenarios.</p>
+                <a href="intermediate.html" class="level-btn">Start Learning</a>
+            </div>
+            <div class="level-card">
+                <h3>🔴 Advanced</h3>
+                <p>Master complex algorithms, system design, and competitive programming.</p>
+                <a href="advanced.html" class="level-btn">Start Learning</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 CodeSpark. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="dashboard.js"></script>
+</body>
+</html>
